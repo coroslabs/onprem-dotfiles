@@ -67,26 +67,6 @@
         "FASTMCP_LOG_LEVEL": "ERROR"
       }
     },
-    "aws.billing-cost-management": {
-      "type": "stdio",
-      "command": "uvx",
-      "args": ["awslabs.billing-cost-management-mcp-server@latest"],
-      "env": {
-        "AWS_PROFILE": "annalise-master",
-        "AWS_REGION": "us-east-1",
-        "FASTMCP_LOG_LEVEL": "ERROR"
-      }
-    },
-    "aws.pricing": {
-      "type": "stdio",
-      "command": "uvx",
-      "args": ["awslabs.aws-pricing-mcp-server@latest"],
-      "env": {
-        "AWS_PROFILE": "annalise-master",
-        "AWS_REGION": "us-east-1",
-        "FASTMCP_LOG_LEVEL": "ERROR"
-      }
-    },
     "aws.knowledge": {
       "type": "http",
       "url": "https://knowledge-mcp.global.api.aws",
@@ -99,6 +79,16 @@
       "headers": {
         "CONTEXT7_API_KEY": "{{ onepasswordRead "op://phaestosdev-onprem/Context7 API Key/credential" }}"
       }
+    },
+    "notebooklm-mcp": {
+      "type": "stdio",
+      "command": "notebooklm-mcp",
+      "args": [],
+      "env": {}
+    },
+    "posthog": {
+      "type": "http",
+      "url": "https://mcp.posthog.com/mcp"
     },
     "wiz": {
       "type": "http",

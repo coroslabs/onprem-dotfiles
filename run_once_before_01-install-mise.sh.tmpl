@@ -10,3 +10,8 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 mise install
+
+# Install notebooklm-mcp CLI via uv
+if ! command -v notebooklm-mcp &> /dev/null; then
+  uv tool install notebooklm-mcp-cli
+fi
